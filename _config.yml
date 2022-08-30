@@ -1,4 +1,4 @@
 theme: jekyll-theme-minimal
 title: Image Processing
 description: Web application to process image of cat and hat
-theme: cayman
+remote_theme: cayman
