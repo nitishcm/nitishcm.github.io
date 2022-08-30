@@ -1,8 +1,4 @@
-#Environment
 
-DEV - Trimmed down version of prod
-Pre Prod/UAT - Like to Like of Production
-Prod 
 
 <ul>
     <li>Image storage : S3  </li>
@@ -19,3 +15,9 @@ Application hosted in ECS with autoscaling based on CPU and Mem
 The load balancer will be used to deliver the web frontend
 
 </ul>
+
+Scenario 2 
+
+If the processing of image takes less than 15 min use lambda for processing image and storing it in S3.
+Limitations : 
+    1000 lambdas run concurrently in region 
