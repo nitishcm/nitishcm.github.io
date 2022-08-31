@@ -12,9 +12,21 @@ We will have below environments
 | Environment | Description |
 | ----------- | ----------- |
 | DEV         | Developer environment for initial dev test.  |
-| UAT         |Like to Like version of Production. This will be used for Automation, User Acceptance Test and debugging critical PROD issues        |
+| UAT         |Like to Like version of Production. <br> This will be used for Automation, User Acceptance Test and debugging critical PROD issues        |
 | PROD        | Production Environment with no direct access to update bucket    |
 
+- Each environment will have its own branch as below
+
+| Environment | Branch      |
+| ----------- | ----------- |
+| DEV         | dev         |
+| UAT         | uat/pre-prod |
+| PROD        | main/master |
+
+- feature branches to be created from master and merged to dev for development environment
+- create release branch from master and merge feature branches ready to be moved to higher env. Merge release branch to UAT branch.
+- Once testing is completed in UAT merge the release branch to master and rebase merge UAT and DEV branches from master.
+- This will keep master as source of truth for PRODUCTION.
 
 ## Storage
 ### S3 
