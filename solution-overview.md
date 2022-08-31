@@ -7,7 +7,7 @@ We will have below environments
 | Environment | Description |
 | ----------- | ----------- |
 | DEV         | Developer environment for initial dev test.  |
-| UAT         |- Like to Like version of Production. - This will be used for integration, User Acceptance Test and debugging critical PROD issues        |
+| UAT         |Like to Like version of Production. This will be used for integration, User Acceptance Test and debugging critical PROD issues        |
 | PROD        | Production Environment with no direct access to update bucket    |
 
 
@@ -64,14 +64,15 @@ This solution will host Frontend application in ECS Fargate and the REST APIs in
 
 With AWS lambda and ECS Fargate we do not have to manage the hosting server and can easily configure them as per requirement.
 
-Architecture Diag : [Solution 1](../solution-1 "Solution 1")
-CICD Pipeline : [CICD](../cicd-solution-1 "Solution 1")
+Architecture & CICD : [Solution 1](../solution-1 "Solution 1")
+
 
 ### Solution 2
 This solution will host the frontend application and backend REST APIs in kuberntes using AWS EKS fargate.
 
-Architecture Diag : [Solution 2](../solution-2 "Solution 2")
-CICD Pipeline : [CICD](../cicd-solution-2 "Solution 1")
+Architecture & CICD : [Solution 2](../solution-2 "Solution 2")
+
+
 
 
 ## DR
