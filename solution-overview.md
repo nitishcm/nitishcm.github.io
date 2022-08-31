@@ -7,7 +7,7 @@ We will have below environments
 | Environment | Description |
 | ----------- | ----------- |
 | DEV         | Developer environment for initial dev test.  |
-| UAT         |Like to Like version of Production. This will be used for integration, User Acceptance Test and debugging critical PROD issues        |
+| UAT         |Like to Like version of Production. This will be used for Automation, User Acceptance Test and debugging critical PROD issues        |
 | PROD        | Production Environment with no direct access to update bucket    |
 
 
@@ -38,6 +38,8 @@ We will have below environments
 - The application will be hosted in private subnet
 - Access to other AWS services will be via IAM roles
 - API gateway will be private to be available within VPC 
+- API gateway will have secret key for diff env and user
+- We can have seperate environment within API Gateway
 
 
 ## Caching
@@ -71,8 +73,6 @@ Architecture & CICD : [Solution 1](../solution-1 "Solution 1")
 This solution will host the frontend application and backend REST APIs in kuberntes using AWS EKS fargate.
 
 Architecture & CICD : [Solution 2](../solution-2 "Solution 2")
-
-
 
 
 ## DR
