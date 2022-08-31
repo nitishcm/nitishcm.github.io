@@ -1,5 +1,10 @@
 # Solution Overview
 
+- Considering microservice approach for application to seperate out Frontend and  backend functionality into smaller modular applications.
+- This will also help in managing lifecycle of each functionality separately.
+- Testing can easily be performed on each functinality separately.
+
+
 # Environments
     
 We will have below environments 
@@ -52,7 +57,7 @@ We will have below environments
     
 ## Application Hosting
 
-We can setup Infrastructure and CI/CD for the requirement in 2 ways depending on if we can use lambda's or not. 
+- We can setup Infrastructure and CI/CD for the requirement in 2 ways depending on if we can use lambda's or not. 
 
 Lambda's has below restriction
 - Maximum memory : 10,240 MB
@@ -62,20 +67,26 @@ Lambda's has below restriction
 
 
 ### Solution 1 - Preferred
-This solution will host Frontend application in ECS Fargate and the REST APIs in AWS lambda.
-
-With AWS lambda and ECS Fargate we do not have to manage the hosting server and can easily configure them as per requirement.
-
+- This solution will host Frontend application in ECS Fargate and the REST APIs in AWS lambda.
+- With AWS lambda and ECS Fargate we do not have to manage the hosting server and can easily configure them as per requirement.
+- This solution will not incurr cost for hosting backend solution as lambda only inccurs cost when it is triggered and based on mem and cpu used. 
+- 
 Architecture & CICD : [Solution 1](../solution-1 "Solution 1")
 
 
 ### Solution 2
-This solution will host the frontend application and backend REST APIs in kuberntes using AWS EKS fargate.
+- This solution will host the frontend application and backend REST APIs in kuberntes using AWS EKS fargate.
+- This solution will incurr daily cost of hosting backend solution in eks pods.
+- The cost to use ECR for backend application is more compared to storage cost in S3. 
 
 Architecture & CICD : [Solution 2](../solution-2 "Solution 2")
 
 
 ## DR
 
-
-## Cost
+In case of 1 region failing completely. We can follow below approach for DR
+- Use Global Accelerator in front of external load balancer with all the traffic going to main region.
+- Sync docker images  to DR region
+- S3 bucket replication to DR region. 
+- Sync redis cache backup to DR region
+- Setup basic infrastructure in another region. To prevent costing we can stop running any ECS container and disable cloudfront in DR region.
