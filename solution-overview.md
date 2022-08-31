@@ -23,7 +23,10 @@ We will have below environments
 ### Cloudfront
     - Cloudfront will be used to deliver all the static content including css, js and images
     - We will deliver the final generated image to user using cloudfront.
+    - As content is delivered using AWS Edge locations the delivery will be without latency issues.
+    - We can customize the caching time for each path pattern, as a whole etc.
     - We will cache the static content in cloudfront as required depending on usage and image change frequency. As higher invalidations can increase cost.
+    - AWS is responsible for DDoS prevention on Cloudfront.
 
 
 ## Security 
@@ -31,7 +34,13 @@ We will have below environments
     - This will be added in front of Cloudfront and load balancer to prevent any malicious calls.
     - We can use rate limiting from particular IP using WAF as well.
 
-## Application 
+## Caching
+### Redis
+    - Redis is in-memory data structure store which provides faster delivery of cached items. 
+    - AWS Redis also support autoscaling if the resource requirement increases. 
+    - Redis supports snapshots for easy recovery of older data.
+    
+## Application Hosting
 
 We can setup Infrastructure and CI/CD for the requirement in 2 ways depending on if we can use lambda's or not. 
 
@@ -42,5 +51,8 @@ Lambda's has below restriction
 - Maximum concurrent execution (can be increased) - 1000 / region
 
 
-### Solution 1 
+### Solution 1 - Preferred
+    This solution will host Frontend application in ECS and the REST APIs in AWS lambda.
+    
 ### Solution 2
+    This solution will host the frontend application and backend REST APIs in kuberntes. 
