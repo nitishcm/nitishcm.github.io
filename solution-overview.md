@@ -52,8 +52,8 @@ Lambda's has below restriction
 
 
 ### Solution 1 - Preferred
+This solution will host Frontend application in ECS and the REST APIs in AWS lambda.
 
-    This solution will host Frontend application in ECS and the REST APIs in AWS lambda.
-    
+Architecture Diag : [link](../solution-1 "Solution 1")
 ### Solution 2
-    This solution will host the frontend application and backend REST APIs in kuberntes. 
+This solution will host the frontend application and backend REST APIs in kuberntes. 
