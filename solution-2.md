@@ -13,4 +13,7 @@
 
 # Solution 2 CICD
 
-![CICD-2](../Solution-CICD - SOLUTION 2.jpg)!
+![CICD-2](../CICD - SOLUTION_2.jpg)!
+
+
+[HOME](../solution-overview)
