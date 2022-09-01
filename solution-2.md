@@ -8,12 +8,12 @@
 - API gateway can cache the response for calls
 
 
-![solution-2](../Solution-Solution 2.jpg)!
+![solution-2](../Solution_2.jpeg)
 
 
 # Solution 2 CICD
 
-![CICD-2](../CICD - SOLUTION_2.jpg)!
+![CICD-2](../CICD-SOLUTION_2.jpeg)
 
 
 [HOME](../solution-overview)
