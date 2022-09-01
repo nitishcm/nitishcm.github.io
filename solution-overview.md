@@ -29,16 +29,18 @@ We will have below environments
 - This will keep master as source of truth for PRODUCTION.
 
 ## Storage
-### S3 
-- The most highly available service of AWS
-- Private buckets with SSE-S3 encryption enabled
-- Access allowed via bucket policy
-- Accessible via VPC endpoint for application processing
-- Accessible to Cloudfront via Origin Access Identity (OAI)
+### S3
+- S3 will host all the images of cat and hat along with the processed images.
+- It is most highly available service of AWS.
+- Private buckets with SSE-S3 encryption enabled.
+- We will enable versioning on our bucket to keep previous image version and can delete them using lifecycle policy after certain amount of time.
+- Access allowed via bucket policy.
+- Accessible via VPC endpoint for application processing.
+- Accessible to Cloudfront via Origin Access Identity (OAI).
     
 ## Delivery
 ### Cloudfront
-- Cloudfront will be used to deliver all the static content including css, js and images
+- Cloudfront will be used to deliver all the static content including css, js and images.
 - We will deliver the final generated image to user using cloudfront.
 - As content is delivered using AWS Edge locations the delivery will be without latency issues.
 - We can customize the caching time for each path pattern, as a whole etc.
@@ -50,13 +52,14 @@ We will have below environments
 ### WAF (Web Application firewall)
 - This will be added in front of Cloudfront and load balancer to prevent any malicious calls.
 - We can use rate limiting from particular IP using WAF as well.
+- We cab use AWS pre defined rules along with custom rules to prevent attacks on our application.
 
 ### Other security considerations 
-- The application will be hosted in private subnet
-- Access to other AWS services will be via IAM roles
-- API gateway will be private to be available within VPC 
-- API gateway will have secret key for diff env and user
-- We can have seperate environment within API Gateway
+- The application will be hosted in private subnet.
+- Access to other AWS services will be via IAM roles.
+- API gateway will be private to be available within VPC. 
+- API gateway will have secret key for diff env and user.
+- We can have seperate environment within API Gateway for better testing.
 
 
 ## Caching
@@ -76,6 +79,7 @@ Lambda's has below restriction
 - Maximum CPU : 6 CPU
 - Maximum Duration : 15 min
 - Maximum concurrent execution (can be increased) - 1000 / region
+- Languages : It doesn't support languages like PHP, React etc. at the moment 
 
 
 ### Solution 1 - Preferred
