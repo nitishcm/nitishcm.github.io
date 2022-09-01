@@ -69,7 +69,13 @@ We will have below environments
 - Redis supports snapshots for easy recovery of older data.
 - Redis to store the link for processed images for easy delivery of similar combinations. 
 - Redis also can be used for rendered HTML pages for frontend.
-    
+
+## Queue
+### SQS
+- This will be used to handle scenario where multiple request are for same image combinations.
+- If there are multiple users requesting same combination not all will have to go through processing of image. 
+
+
 ## Application Hosting
 
 - We can setup Infrastructure and CI/CD for the requirement in 2 ways depending on if we can use lambda's or not. 
@@ -99,7 +105,11 @@ Architecture & CICD : [Solution 1](../solution-1 "Solution 1")
 
 Architecture & CICD : [Solution 2](../solution-2 "Solution 2")
 
-
+## Monitoring and Alerting
+- CLoudwatch will be used to store all the logs. 
+- Cloudwatch insights will be used for performance monitoring
+- Cloudwatch alarms will be used for alerting
+- 
 ## DR
 
 In case of 1 region failing completely. We can follow below approach for DR
