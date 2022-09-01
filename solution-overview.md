@@ -109,7 +109,7 @@ Architecture & CICD : [Solution 2](../solution-2 "Solution 2")
 - CLoudwatch will be used to store all the logs. 
 - Cloudwatch insights will be used for performance monitoring
 - Cloudwatch alarms will be used for alerting
-- 
+
 ## DR
 
 In case of 1 region failing completely. We can follow below approach for DR
