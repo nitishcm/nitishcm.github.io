@@ -7,11 +7,11 @@
 - VPC endpoint to connect to S3 from lambda or ECS
 - API gateway can cache the response for calls
 
-![solution-1](../Solution-Solution 1.jpg)
+![solution-1](../Solution_1.jpeg)
 
 
 ## CICD
-![CICD](../CICD-SOLUTION_1.jpg)
+![CICD](../CICD-SOLUTION_1.jpeg)
 
 
 [HOME](../solution-overview )
