@@ -86,7 +86,8 @@ Lambda's has below restriction
 - This solution will host Frontend application in ECS Fargate and the REST APIs in AWS lambda.
 - With AWS lambda and ECS Fargate we do not have to manage the hosting server and can easily configure them as per requirement.
 - This solution will not incurr cost for hosting backend solution as lambda only inccurs cost when it is triggered and based on mem and cpu used. 
-- 
+- ECS, Redis, ALB, lambda and API gateway will be spread across Availability Zones in Highly available infrastructure. 
+
 Architecture & CICD : [Solution 1](../solution-1 "Solution 1")
 
 
@@ -94,6 +95,7 @@ Architecture & CICD : [Solution 1](../solution-1 "Solution 1")
 - This solution will host the frontend application and backend REST APIs in kuberntes using AWS EKS fargate.
 - This solution will incurr daily cost of hosting backend solution in eks pods.
 - The cost to use ECR for backend application is more compared to storage cost in S3. 
+- EKS, Redis, ALB and API gateway will be spread across Availability Zones in Highly available infrastructure.
 
 Architecture & CICD : [Solution 2](../solution-2 "Solution 2")
 
@@ -106,3 +108,9 @@ In case of 1 region failing completely. We can follow below approach for DR
 - S3 bucket replication to DR region. 
 - Sync redis cache backup to DR region
 - Setup basic infrastructure in another region. To prevent costing we can stop running any ECS container and disable cloudfront in DR region.
+
+
+## Cost saving
+- To save cost we can turn off ECS/EKS, disable cloudfront in lower environment. 
+- Using lifecycle policy to remove processed image which are not used for longer time.
+- keeping docker image size to small. 
