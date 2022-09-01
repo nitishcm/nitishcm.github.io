@@ -6,6 +6,7 @@
 - The application will trigger lambda for processing images, Fetching existing image link using API Gateway
 - VPC endpoint to connect to S3 from lambda or ECS
 - API gateway can cache the response for calls
+- SQS queue to manage the request queue for image processing
 
 ![solution-1](../Solution_1.jpeg)
 
